@@ -1,5 +1,4 @@
 package figure;
-import java.util.*;
 
 public class Rectangulo extends Figura
 {
@@ -88,31 +87,21 @@ public class Rectangulo extends Figura
     }
     
     @Override
-    public void modificar()
+    public void modificar(int...opc)
     { 
         /*
          * modifica los atributos mediante un menu
          * precondicion:
          *      + el cambio de valor no puede ser negativo
          */
-        Scanner scn = new Scanner(System.in).useLocale(Locale.US) ;
-        System.out.println("1.-cambiar altura");
-        System.out.println("2.-cambiar base");
-        System.out.println("3.-salir");
-        int opc = scn.nextInt();
-        switch(opc)
+        
+        switch(opc[1])
         {
             case 1:
-                System.out.println("introduce el nuevo valor:");
-                double newAltura = scn.nextDouble() ;
-                setAltura(newAltura);
-                modificar();
+                setAltura(opc[2]);
                 break ;
             case 2:
-                System.out.println("introduce el nuevo valor:");
-                double newBase = scn.nextDouble() ;
-                setBase(newBase);
-                modificar();
+                setBase(opc[2]);
                 break ;
             default :
                 break ;

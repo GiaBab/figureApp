@@ -1,5 +1,4 @@
 package figure;
-import java.util.*;
 
 public class Circulo extends Figura
 {
@@ -59,24 +58,17 @@ public class Circulo extends Figura
     }
 
     @Override
-    public void modificar()
+    public void modificar(int...opc)
     {
         /*
          * modifica los atributos mediante un menu
          * precondicion:
          *      + el cambio de valor no puede ser negativo 
          */
-        Scanner scn = new Scanner(System.in).useLocale(Locale.US) ;
-        System.out.println("1.-cambiar diametro");
-        System.out.println("2.-salir");
-        int opc = scn.nextInt();
-        switch(opc)
+        switch(opc[0])
         {
             case 1:
-                System.out.println("introduce el nuevo valor:");
-                double newDiametro = scn.nextDouble() ;
-                setDiametro(newDiametro);
-                modificar();
+                setDiametro(opc[1]);
                 break ;
             default :
                 break ;
