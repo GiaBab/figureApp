@@ -14,6 +14,11 @@ public class ArrayFigure {
     {   
         this.arrayFigura = new Figura[tamanno] ;
     }
+
+    public Figura getFigura(int num)
+    {
+        return arrayFigura[num] ;
+    }
     
     public void listar()
     {
@@ -46,7 +51,7 @@ public class ArrayFigure {
          *      + *posicion* no puede ser mas grande que el tamaño total de la lista
          *      + *posicion* no puede ser negativo
          */
-        return arrayFigura[posicion] != null;
+        return getFigura(posicion) != null;
     }
 
     private int cantidadDeFiguras()
@@ -229,13 +234,13 @@ public class ArrayFigure {
         /*
          * imprime la superficie de mayor tamanno
          */
-        double max = 0 ;
+        double max = getFigura(0).getSuperficie() ;
 
-        for (int i = 0 ; tamannoArrayEsMayorQue(i) ; i++)
+        for (int i = 1 ; tamannoArrayEsMayorQue(i) ; i++)
         {
-            if(posicionNoEsVacio(i) && max < arrayFigura[i].getSuperficie())
+            if(posicionNoEsVacio(i) && max < getFigura(i).getSuperficie())
             {
-                max = arrayFigura[i].getSuperficie() ;
+                max = getFigura(i).getSuperficie() ;
             }
         }
 
@@ -247,13 +252,13 @@ public class ArrayFigure {
         /*
          * imprime la superficie de menor tamanno
          */
-        double min = Double.MAX_VALUE;
+        double min = getFigura(0).getSuperficie() ;
 
-        for (int i = 0 ; tamannoArrayEsMayorQue(i) ; i++)
+        for (int i = 1 ; tamannoArrayEsMayorQue(i) ; i++)
         {
-            if(posicionNoEsVacio(i) && min > arrayFigura[i].getSuperficie())
+            if(posicionNoEsVacio(i) && min > getFigura(i).getSuperficie())
             {
-                min = arrayFigura[i].getSuperficie() ;
+                min = getFigura(i).getSuperficie() ;
             }
         }
 
@@ -268,7 +273,7 @@ public class ArrayFigure {
         return arrayFigura.length ;
     }
 
-    public void modificar(int posicion)
+    public void modificar(int posicion, int opc, double size)
     {
         /*
          * modifica los atributos de la figura en la posicion Int *posicion* mediante un menu
@@ -283,7 +288,7 @@ public class ArrayFigure {
         {
             if (validarPosicion(posicion)) throw new IllegalArgumentException("no hay elemento en esa posicion");
             
-            arrayFigura[posicion].modificar();
+            getFigura(posicion).modificar(opc*1.0, size);
         }
         catch(Exception e)
         {
@@ -306,7 +311,7 @@ public class ArrayFigure {
         {
             if(validarPosicion(posicion)) throw new IllegalArgumentException("no hay elemento en esa posicion");
         
-            this.arrayFigura[posicion].atributos() ;
+            getFigura(posicion).atributos() ;
         }
         catch (Exception e)
         {

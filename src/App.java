@@ -1,6 +1,3 @@
-import java.util.*;
-
-import dataStructure.*;
 import menuStructure.Menu;
 
 public class App {

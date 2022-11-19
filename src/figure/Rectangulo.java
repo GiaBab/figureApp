@@ -87,7 +87,7 @@ public class Rectangulo extends Figura
     }
     
     @Override
-    public void modificar(int...opc)
+    public void modificar(Double...opc)
     { 
         /*
          * modifica los atributos mediante un menu
@@ -95,13 +95,13 @@ public class Rectangulo extends Figura
          *      + el cambio de valor no puede ser negativo
          */
         
-        switch(opc[1])
+        switch(opc[0].intValue())
         {
             case 1:
-                setAltura(opc[2]);
+                setAltura(opc[1]);
                 break ;
             case 2:
-                setBase(opc[2]);
+                setBase(opc[1]);
                 break ;
             default :
                 break ;

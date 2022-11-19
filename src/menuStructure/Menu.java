@@ -8,12 +8,12 @@ import figure.*;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US) ;
+    ArrayFigure test1 = ReaderFiler.getInstance().imprimir() ;
 
     public Menu(){} ;
     public void inicialMenu()
     {
         int opc ;
-        ArrayFigure test1 = ReaderFiler.getInstance().imprimir() ;
 
         do
         {
@@ -26,7 +26,7 @@ public class Menu {
                     test1.listar();
                     break;
                 case 2:
-                    agregarYCrearElemento(test1);
+                    agregarYCrearElemento();
                     break;
                 case 3:
                     System.out.println("ingrese posicion");
@@ -45,9 +45,7 @@ public class Menu {
                     test1.superficieMinima();
                     break;
                 case 7:
-                    System.out.println("ingrese posicion");
-                    int posicion2 = scanner.nextInt() ;
-                    test1.modificar(posicion2) ;
+                    modificar() ;
                     break ;
                 default:
                     System.out.println("finalizado");
@@ -70,7 +68,7 @@ public class Menu {
         System.out.println("8.-Salir");
     }
     
-    private void agregarYCrearElemento(ArrayFigure test1) 
+    private void agregarYCrearElemento() 
     {
         /*
          * Menu para agregar y crear instancia de figura 
@@ -105,5 +103,11 @@ public class Menu {
         {
             System.out.println(e.getMessage());
         }
+    }
+
+    private void modificar()
+    {
+        
+        test1.modificar(0, 0, 0); ;
     }
 }

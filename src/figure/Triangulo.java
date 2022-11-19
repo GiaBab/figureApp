@@ -26,22 +26,4 @@ public class Triangulo extends Rectangulo
         return (altura * base)/2 ;
     }
 
-    @Override
-    public double getAltura() 
-    {
-        /*
-         * devuelve la altura de la figura
-         */
-        return altura;
-    }
-
-    @Override
-    public double getBase() 
-    {
-        /*
-         * devuelve la base de la figura
-         */
-        return base;
-    }
-
 }

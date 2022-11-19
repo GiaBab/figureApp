@@ -58,14 +58,14 @@ public class Circulo extends Figura
     }
 
     @Override
-    public void modificar(int...opc)
+    public void modificar(Double...opc)
     {
         /*
          * modifica los atributos mediante un menu
          * precondicion:
          *      + el cambio de valor no puede ser negativo 
          */
-        switch(opc[0])
+        switch(opc[0].intValue())
         {
             case 1:
                 setDiametro(opc[1]);
