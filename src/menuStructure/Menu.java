@@ -7,10 +7,18 @@ import dataStructure.*;
 import figure.*;
 
 public class Menu {
+
+    private static Menu instance = null ;
+    private Menu(){} ;
+    public static Menu getInstance()
+    {
+        if(instance == null) instance = new Menu() ;
+        return instance ;
+    }
+
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US) ;
     ArrayFigure arrayFigure = ReaderFiler.getInstance().imprimir() ;
 
-    public Menu(){} ;
     public void inicialMenu()
     {
         int opc ;
@@ -54,7 +62,7 @@ public class Menu {
         }
         while(opc < 8) ;
     }
-    
+
     private void opciones() 
     {
         System.out.println("ingrese opcion:");

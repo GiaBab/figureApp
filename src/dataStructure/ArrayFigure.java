@@ -115,18 +115,14 @@ public class ArrayFigure {
          */
         switch (inicialFigura) {
 
-            case 'T':
+            case 'T' ->
                 agregarTriangulo(num1, num2[0]);
-                break ;
-            case 'R':    
+            case 'R' ->    
                 agregarRectangulo(num1, num2[0]);
-                break ;
-            case 'C':
+            case 'C' ->
                 agregarCirculo(num1);
-                break ;
-            default:
+            default ->
                 System.out.println("No existe figura");
-                break ;
         }
     }
 
