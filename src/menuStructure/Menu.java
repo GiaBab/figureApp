@@ -8,7 +8,7 @@ import figure.*;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US) ;
-    ArrayFigure test1 = ReaderFiler.getInstance().imprimir() ;
+    ArrayFigure arrayFigure = ReaderFiler.getInstance().imprimir() ;
 
     public Menu(){} ;
     public void inicialMenu()
@@ -23,7 +23,7 @@ public class Menu {
             switch (opc) 
             {
                 case 1:
-                    test1.listar();
+                    arrayFigure.listar();
                     break;
                 case 2:
                     agregarYCrearElemento();
@@ -31,22 +31,21 @@ public class Menu {
                 case 3:
                     System.out.println("ingrese posicion");
                     int posicion = scanner.nextInt() ;
-                    test1.borrarFiguraPosicion(posicion);
+                    arrayFigure.borrarFiguraPosicion(posicion);
                     break;
                 case 4:
                     System.out.println("ingrese posicion");
                     int posicion1 = scanner.nextInt() ;
-                    test1.consultarPos(posicion1);
+                    arrayFigure.consultarPos(posicion1);
                     break;
                 case 5:
-                    test1.superficieMaximo();
+                    arrayFigure.superficieMaximo();
                     break;
                 case 6:
-                    test1.superficieMinima();
+                    arrayFigure.superficieMinima();
                     break;
                 case 7:
                     modificar() ;
-                    break ;
                 default:
                     System.out.println("finalizado");
                     scanner.close();
@@ -55,6 +54,7 @@ public class Menu {
         }
         while(opc < 8) ;
     }
+    
     private void opciones() 
     {
         System.out.println("ingrese opcion:");
@@ -84,7 +84,7 @@ public class Menu {
             {
                 System.out.println("ingrese diametro");
                 Double num = scanner.nextDouble() ; 
-                test1.agregarYCrearFigura(inicial, num) ;
+                arrayFigure.agregarYCrearFigura(inicial, num) ;
             }
             else if(inicial == 'T' || inicial == 'R')
             {
@@ -92,7 +92,7 @@ public class Menu {
                 Double num = scanner.nextDouble() ; 
                 System.out.println("ingrese base");
                 Double num1 = scanner.nextDouble() ;
-                test1.agregarYCrearFigura(inicial, num, num1) ;
+                arrayFigure.agregarYCrearFigura(inicial, num, num1) ;
             }
             else
             {
@@ -107,7 +107,23 @@ public class Menu {
 
     private void modificar()
     {
-        
-        test1.modificar(0, 0, 0); ;
+        System.out.println("Posicion");
+        int pos = scanner.nextInt() ;
+        if(arrayFigure.getFigura(pos) instanceof Circulo)
+        {
+            System.out.println("1.Diametro");
+            System.out.println("2.salir");
+             
+        }
+        else
+        {
+            System.out.println("1.altura");
+            System.out.println("2.base");
+            System.out.println("3.salir");
+        }
+        int opc = scanner.nextInt() ;
+        System.out.println("new size");
+        double size = scanner.nextDouble() ;
+        arrayFigure.modificar(pos, opc, size); ;
     }
 }
