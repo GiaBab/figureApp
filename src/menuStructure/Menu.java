@@ -30,34 +30,22 @@ public class Menu {
 
             switch (opc) 
             {
-                case 1:
+                case 1 ->
                     arrayFigure.listar();
-                    break;
-                case 2:
+                case 2 ->
                     agregarYCrearElemento();
-                    break;
-                case 3:
-                    System.out.println("ingrese posicion");
-                    int posicion = scanner.nextInt() ;
-                    arrayFigure.borrarFiguraPosicion(posicion);
-                    break;
-                case 4:
-                    System.out.println("ingrese posicion");
-                    int posicion1 = scanner.nextInt() ;
-                    arrayFigure.consultarPos(posicion1);
-                    break;
-                case 5:
+                case 3 ->
+                    deletPos();
+                case 4 ->
+                    consultPos();
+                case 5 ->
                     arrayFigure.superficieMaximo();
-                    break;
-                case 6:
+                case 6 ->
                     arrayFigure.superficieMinima();
-                    break;
-                case 7:
+                case 7 ->
                     modificar() ;
-                default:
-                    System.out.println("finalizado");
-                    scanner.close();
-                    break; 
+                default ->
+                    endMenu();
             }
         }
         while(opc < 8) ;
@@ -133,5 +121,24 @@ public class Menu {
         System.out.println("new size");
         double size = scanner.nextDouble() ;
         arrayFigure.modificar(pos, opc, size); ;
+    }
+
+    private void deletPos()
+    {
+        System.out.println("ingrese posicion");
+        int posicion = scanner.nextInt() ;
+        arrayFigure.borrarFiguraPosicion(posicion);
+    }
+
+    private void consultPos()
+    {
+        System.out.println("ingrese posicion");
+        int posicion1 = scanner.nextInt() ;
+        arrayFigure.consultarPos(posicion1);
+    }
+
+    private void endMenu() {
+        System.out.println("finalizado");
+        scanner.close(); 
     }
 }
