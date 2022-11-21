@@ -48,7 +48,7 @@ public class Circulo extends Figura
         {
             if(0>tamannoDiametro) throw new IllegalArgumentException("Solo numeros positivos"); 
             
-            this.diametro = tamannoDiametro ;  
+            diametro = tamannoDiametro ;  
         } 
         catch (Exception e) 
         {

@@ -57,7 +57,7 @@ public class Rectangulo extends Figura
         try 
         {
             if(0>tamannoAltura) throw new IllegalArgumentException("Solo numeros positivos");
-            this.altura = tamannoAltura ;  
+            altura = tamannoAltura ;  
         } 
         catch (Exception e) 
         {
@@ -78,7 +78,7 @@ public class Rectangulo extends Figura
         {
             if(0>tamannoBase) throw new IllegalArgumentException("Solo numeros positivos");
             
-            this.base = tamannoBase ;  
+            base = tamannoBase ;  
         } 
         catch (Exception e) 
         {
