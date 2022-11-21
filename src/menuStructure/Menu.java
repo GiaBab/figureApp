@@ -21,49 +21,46 @@ public class Menu {
 
     public void inicialMenu()
     {
-        int opc ;
+        MenuOpcions opc = new MenuOpcions("Mostrar", "Agregar", "eliminar", "consultar", "superficie maxima", "superficie minima", "modificar", "salir") ;
 
-        do
-        {
-            opciones();
-            opc = scanner.nextInt();
-
-            switch (opc) 
+            switch (opc.selectionOptionSystem()) 
             {
+                case 0 ->
+                    listar();
                 case 1 ->
-                    arrayFigure.listar();
-                case 2 ->
                     agregarYCrearElemento();
-                case 3 ->
+                case 2 ->
                     deletPos();
-                case 4 ->
+                case 3 ->
                     consultPos();
+                case 4 ->
+                    superficieMaxima();
                 case 5 ->
-                    arrayFigure.superficieMaximo();
+                    superficieMinima();
                 case 6 ->
-                    arrayFigure.superficieMinima();
-                case 7 ->
                     modificar() ;
                 default ->
                     endMenu();
             }
         }
-        while(opc < 8) ;
+
+    private void listar() 
+    {
+        arrayFigure.listar();
+        inicialMenu();
     }
 
-    private void opciones() 
+    private void superficieMinima() 
     {
-        System.out.println("ingrese opcion:");
-        System.out.println("1.-Mostrar elementos");
-        System.out.println("2.-Agregar elemento");
-        System.out.println("3.-Eliminar por posicion");
-        System.out.println("4.-consultar Figura por posicion");
-        System.out.println("5.-Superficie maxima");
-        System.out.println("6.-Superficie minima");
-        System.out.println("7.-Modificar Figura por posicion");
-        System.out.println("8.-Salir");
+        arrayFigure.superficieMinima();
+        inicialMenu();
     }
     
+    private void superficieMaxima() {
+        arrayFigure.superficieMaxima();
+        inicialMenu();
+    }
+
     private void agregarYCrearElemento() 
     {
         /*
@@ -99,6 +96,7 @@ public class Menu {
         {
             System.out.println(e.getMessage());
         }
+        inicialMenu() ;
     }
 
     private void modificar()
@@ -109,7 +107,6 @@ public class Menu {
         {
             System.out.println("1.Diametro");
             System.out.println("2.salir");
-             
         }
         else
         {
@@ -120,7 +117,8 @@ public class Menu {
         int opc = scanner.nextInt() ;
         System.out.println("new size");
         double size = scanner.nextDouble() ;
-        arrayFigure.modificar(pos, opc, size); ;
+        arrayFigure.modificar(pos, opc, size); 
+        inicialMenu() ;
     }
 
     private void deletPos()
@@ -128,6 +126,7 @@ public class Menu {
         System.out.println("ingrese posicion");
         int posicion = scanner.nextInt() ;
         arrayFigure.borrarFiguraPosicion(posicion);
+        inicialMenu() ;
     }
 
     private void consultPos()
@@ -135,6 +134,7 @@ public class Menu {
         System.out.println("ingrese posicion");
         int posicion1 = scanner.nextInt() ;
         arrayFigure.consultarPos(posicion1);
+        inicialMenu() ;
     }
 
     private void endMenu() {

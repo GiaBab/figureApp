@@ -225,7 +225,7 @@ public class ArrayFigure {
         }
     }   
 
-    public void superficieMaximo() 
+    public void superficieMaxima() 
     {   
         /*
          * imprime la superficie de mayor tamanno
