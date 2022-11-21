@@ -25,7 +25,7 @@ public class Menu {
 
         do
         {
-            opciones();
+            new MenuString("Mostrar", "Agregar", "Eliminar", "Consultar", "Superficie Maxima", "Superficie Minima", "Modificar", "Salir").mostrarOpcion(); 
             opc = scanner.nextInt();
 
             switch (opc) 
@@ -49,19 +49,6 @@ public class Menu {
             }
         }
         while(opc != 8) ;
-    }
-
-    private void opciones() 
-    {
-        System.out.println("ingrese opcion:");
-        System.out.println("1.-Mostrar elementos");
-        System.out.println("2.-Agregar elemento");
-        System.out.println("3.-Eliminar por posicion");
-        System.out.println("4.-consultar Figura por posicion");
-        System.out.println("5.-Superficie maxima");
-        System.out.println("6.-Superficie minima");
-        System.out.println("7.-Modificar Figura por posicion");
-        System.out.println("8.-Salir");
     }
     
     private void agregarYCrearElemento() 
@@ -107,14 +94,11 @@ public class Menu {
         int pos = scanner.nextInt() ;
         if(arrayFigure.getFigura(pos) instanceof Circulo)
         {
-            System.out.println("1.Diametro");
-            System.out.println("2.salir");
+            new MenuString("Diametro", "Salir").mostrarOpcion();
         }
         else
         {
-            System.out.println("1.altura");
-            System.out.println("2.base");
-            System.out.println("3.salir");
+            new MenuString("Altura", "Base", "Salir").mostrarOpcion();
         }
         int opc = scanner.nextInt() ;
         System.out.println("new size");

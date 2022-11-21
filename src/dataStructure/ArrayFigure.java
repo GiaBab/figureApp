@@ -15,9 +15,16 @@ public class ArrayFigure {
         this.arrayFigura = new Figura[tamanno] ;
     }
 
-    public Figura getFigura(int num)
+    public Figura getFigura(int num) throws ArrayIndexOutOfBoundsException
     {
-        return arrayFigura[num] ;
+        try 
+        {
+            return arrayFigura[num] ;   
+        } 
+        catch (Exception e) 
+        {
+            throw e ;
+        }  
     }
     
     public void listar()
@@ -37,10 +44,10 @@ public class ArrayFigure {
          * parametro:
          *      + numero - int : numero a comparar
          */
-        return numero < this.tamanno();
+        return numero < tamanno();
     }
 
-    private boolean posicionNoEsVacio(int posicion) 
+    private boolean posicionNoEsVacio(int posicion) throws ArrayIndexOutOfBoundsException
     {
         /*
          * devuelve si el elemento que esta en el int *posicion* de la lista 
@@ -197,7 +204,7 @@ public class ArrayFigure {
         
     }
     
-    public void borrarFiguraPosicion(int posicion) 
+    public void borrarFiguraPosicion(int posicion) throws ArrayIndexOutOfBoundsException
     {
         /*
          * borra una Figura del array de la int *posicion* deseada
@@ -269,7 +276,7 @@ public class ArrayFigure {
         return arrayFigura.length ;
     }
 
-    public void modificar(int posicion, int opc, double size)
+    public void modificar(int posicion, int opc, double size) throws ArrayIndexOutOfBoundsException
     {
         /*
          * modifica los atributos de la figura en la posicion Int *posicion* mediante un menu
@@ -292,7 +299,7 @@ public class ArrayFigure {
         }
     }
 
-    public void consultarPos(int posicion)
+    public void consultarPos(int posicion) throws ArrayIndexOutOfBoundsException
     {
         /*
          * imprime los atributos de la figura de dicha int *posicion*
@@ -320,7 +327,7 @@ public class ArrayFigure {
         /*
          * devuelve si se cumple la condicion en dicha posicion
          */
-        return (!posicionNoEsVacio(posicion) || posicion < 0 || !tamannoArrayEsMayorQue(posicion) || arrayFigura == null);
+        return (!tamannoArrayEsMayorQue(posicion) || !posicionNoEsVacio(posicion) || posicion < 0 || arrayFigura == null);
     }
     
 }
