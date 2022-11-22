@@ -1,5 +1,7 @@
 package figure;
 
+import menuStructure.MenuString;
+
 public class Rectangulo extends Figura
 {
     double altura ;
@@ -107,4 +109,10 @@ public class Rectangulo extends Figura
                 break ;
         }
     }
+
+    @Override
+    public void auxStrModificar()
+    {
+        new MenuString("Altura", "Base", "Salir").mostrarOpcion();
+    } 
 }

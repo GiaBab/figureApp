@@ -7,4 +7,6 @@ public abstract class Figura
     public abstract double getSuperficie() ;
 
     public abstract void modificar(Double...opc) ;
+
+    public abstract void auxStrModificar() ;
 }

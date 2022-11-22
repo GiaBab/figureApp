@@ -1,5 +1,7 @@
 package figure;
 
+import menuStructure.MenuString;
+
 public class Circulo extends Figura
 {
     double diametro ;
@@ -73,5 +75,11 @@ public class Circulo extends Figura
             default :
                 break ;
         }
+    }
+
+    @Override
+    public void auxStrModificar()
+    {
+        new MenuString("Diametro", "Salir").mostrarOpcion();
     }
 }

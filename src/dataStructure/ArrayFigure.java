@@ -15,7 +15,7 @@ public class ArrayFigure {
         this.arrayFigura = new Figura[tamanno] ;
     }
 
-    public Figura getFigura(int num) throws ArrayIndexOutOfBoundsException
+    public Figura getFigura(int num) throws ArrayIndexOutOfBoundsException, NullPointerException
     {
         try 
         {

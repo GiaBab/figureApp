@@ -2,9 +2,7 @@ package menuStructure;
 
 import java.util.Locale;
 import java.util.Scanner;
-
 import dataStructure.*;
-import figure.*;
 
 public class Menu {
 
@@ -31,7 +29,7 @@ public class Menu {
             switch (opc) 
             {
                 case 1 ->
-                    arrayFigure.listar();
+                    listar();
                 case 2 ->
                     agregarYCrearElemento();
                 case 3 ->
@@ -39,9 +37,9 @@ public class Menu {
                 case 4 ->
                     consultPos();
                 case 5 ->
-                    arrayFigure.superficieMaxima();
+                    superficieMaxima();
                 case 6 ->
-                    arrayFigure.superficieMinima();
+                    superficieMinima();
                 case 7 ->
                     modificar() ;
                 case 8 ->
@@ -51,6 +49,18 @@ public class Menu {
         while(opc != 8) ;
     }
     
+    private void listar() {
+        arrayFigure.listar();
+    }
+
+    private void superficieMaxima() {
+        arrayFigure.superficieMaxima();
+    }
+
+    private void superficieMinima() {
+        arrayFigure.superficieMinima();
+    }
+
     private void agregarYCrearElemento() 
     {
         /*
@@ -90,20 +100,18 @@ public class Menu {
 
     private void modificar()
     {
-        System.out.println("Posicion");
-        int pos = scanner.nextInt() ;
-        if(arrayFigure.getFigura(pos) instanceof Circulo)
-        {
-            new MenuString("Diametro", "Salir").mostrarOpcion();
+        try {
+            System.out.println("Posicion");
+            int pos = scanner.nextInt() ;
+            arrayFigure.getFigura(pos).auxStrModificar();
+            int opc = scanner.nextInt() ;
+            System.out.println("new size");
+            double size = scanner.nextDouble() ;
+            arrayFigure.modificar(pos, opc, size); 
+        } catch (Exception e) {
+            System.out.println(e.getMessage()) ;
+            System.out.println("input invalide");
         }
-        else
-        {
-            new MenuString("Altura", "Base", "Salir").mostrarOpcion();
-        }
-        int opc = scanner.nextInt() ;
-        System.out.println("new size");
-        double size = scanner.nextDouble() ;
-        arrayFigure.modificar(pos, opc, size); ;
     }
 
     private void deletPos()
