@@ -15,7 +15,7 @@ public class Menu {
     }
 
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US) ;
-    ArrayFigure arrayFigure = ReaderFiler.getInstance().imprimir() ;
+    ArrayFigure arrayFigure = ArchiveSystem.getInstance().openArchive() ;
 
     public void inicialMenu()
     {

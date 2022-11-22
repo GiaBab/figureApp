@@ -4,17 +4,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
 
-public class ReaderFiler 
+public class ArchiveSystem 
 {
-    private static ReaderFiler instance = null ;
-    private ReaderFiler(){} ;
-    public static ReaderFiler getInstance()
+    private static ArchiveSystem instance = null ;
+    private ArchiveSystem(){} ;
+    public static ArchiveSystem getInstance()
     {
-        if(instance == null) instance = new ReaderFiler() ;
+        if(instance == null) instance = new ArchiveSystem() ;
         return instance ;
     }
 
-    public ArrayFigure imprimir()
+    public ArrayFigure openArchive()
     {
         /*
          * devuelve un arrayDeFiguras con las figuras impresa en el archivo.txt
