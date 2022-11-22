@@ -7,9 +7,9 @@ Welcome to the VS Code Java world. Here is a guideline to help you get started t
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
-  - `Figure`: the folder to maintain dependencies
-  - `DataStructure`: the folder to maintain dependencies
-  - `MenuStructure`: the folder to maintain dependencies
+  - `Figure`: Figure class and subclass
+  - `DataStructure`: data estructure based in array system And scanner for archive.txt
+  - `MenuStructure`: menu based in command interactive with opcions
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
