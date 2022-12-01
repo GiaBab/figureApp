@@ -3,9 +3,9 @@ package figure;
 public class Triangulo extends Rectangulo
 {
     
-    public Triangulo(double tamannoAltura, double tamannoBase)
+    public Triangulo(double altura, double base)
     {
-        super(tamannoAltura, tamannoBase) ;
+        super(altura, base) ;
     }
 
     @Override

@@ -7,10 +7,10 @@ public class Rectangulo extends Figura
     double altura ;
     double base ;
 
-    public Rectangulo(double tamannoAltura, double tamannoBase) 
+    public Rectangulo(double altura, double base) 
     {
-        this.altura = tamannoAltura ;
-        this.base = tamannoBase ;
+        this.altura = altura ;
+        this.base = base ;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Rectangulo extends Figura
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("la altura del rectangulo es de: " + this.getAltura() + ", la base de: " + this.getBase() + ", su superficie es de: " + this.getSuperficie());
+        System.out.println("la altura del rectangulo es de: " + getAltura() + ", la base de: " + getBase() + ", su superficie es de: " + getSuperficie());
     }
 
     @Override

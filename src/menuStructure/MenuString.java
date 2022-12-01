@@ -11,6 +11,7 @@ public class MenuString
 
     public void mostrarOpcion()
     {
+        System.out.println("---------------------------------");
         for(int i=0 ; opcionsList.length > i ; i++)
         {
             System.out.println("["+(i+1)+"] " + opcionsList[i]);

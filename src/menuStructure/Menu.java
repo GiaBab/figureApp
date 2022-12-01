@@ -75,15 +75,15 @@ public class Menu {
             char inicial = Character.toUpperCase(scanner.next().charAt(0));
             if(inicial == 'C')
             {
-                System.out.println("ingrese diametro");
+                System.out.print("input diametro: ");
                 Double num = scanner.nextDouble() ; 
                 arrayFigure.agregarYCrearFigura(inicial, num) ;
             }
             else if(inicial == 'T' || inicial == 'R')
             {
-                System.out.println("ingrese altura");
+                System.out.print("input altura: ");
                 Double num = scanner.nextDouble() ; 
-                System.out.println("ingrese base");
+                System.out.print("input base: ");
                 Double num1 = scanner.nextDouble() ;
                 arrayFigure.agregarYCrearFigura(inicial, num, num1) ;
             }
@@ -101,14 +101,16 @@ public class Menu {
     private void modificar()
     {
         try {
-            System.out.println("Posicion");
+            System.out.print("input index: ");
             int pos = scanner.nextInt() ;
             arrayFigure.getFigura(pos).auxStrModificar();
             int opc = scanner.nextInt() ;
-            System.out.println("new size");
+            System.out.print("new size: ");
             double size = scanner.nextDouble() ;
             arrayFigure.modificar(pos, opc, size); 
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             System.out.println(e.getMessage()) ;
             System.out.println("input invalide");
         }
@@ -116,14 +118,14 @@ public class Menu {
 
     private void deletPos()
     {
-        System.out.println("ingrese posicion");
+        System.out.print("input index: ");
         int posicion = scanner.nextInt() ;
         arrayFigure.borrarFiguraPosicion(posicion);
     }
 
     private void consultPos()
     {
-        System.out.println("ingrese posicion");
+        System.out.print("input index: ");
         int posicion1 = scanner.nextInt() ;
         arrayFigure.consultarPos(posicion1);
     }

@@ -31,9 +31,10 @@ public class ArchiveSystem
             BufferedReader myReader = new BufferedReader(myObj) ;
             String data = myReader.readLine();
             ArrayFigure arrFiguraAux = new ArrayFigure(Integer.parseInt(data)) ;
+            int i= 0 ;
             while ((data = myReader.readLine()) != null) 
             {
-                System.out.println("imprimiendo: " + data) ;
+                System.out.println("["+ (i++) +"] " + "imprimiendo: " + data) ;
                 String[] dataSplit = data.split(" ") ;
                 char inicial = data.charAt(0);
                 double altura = Double.parseDouble(dataSplit[1]) ;

@@ -6,9 +6,9 @@ public class Circulo extends Figura
 {
     double diametro ;
     
-    public Circulo(double tamannoDiametro)
+    public Circulo(double diametro)
     {
-        this.diametro = tamannoDiametro ;   
+        this.diametro = diametro ;   
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Circulo extends Figura
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("el diametro del circulo es de: " + this.getDiametro() + ", su superficie es de: " + this.getSuperficie());
+        System.out.println("el diametro del circulo es de: " + getDiametro() + ", su superficie es de: " + getSuperficie());
     }
 
     @Override

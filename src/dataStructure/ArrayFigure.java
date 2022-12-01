@@ -32,9 +32,10 @@ public class ArrayFigure {
         /*
          * Lista todas las Figuras del array
          */
+        int i = 0;
         for (Figura figuras:arrayFigura)
         {
-            System.out.println(figuras) ;
+            System.out.println( "[" + i++ + "] " + figuras) ;
         }
     }
 
