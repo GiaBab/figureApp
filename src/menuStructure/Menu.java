@@ -23,7 +23,7 @@ public class Menu {
 
         do
         {
-            new MenuString("Mostrar", "Agregar", "Eliminar", "Consultar", "Superficie Maxima", "Superficie Minima", "Modificar", "Salir").mostrarOpcion(); 
+            new MenuString("Mostrar", "Add", "delete", "Consultar", "Superficie Max", "Superficie Min", "Modif", "exit").mostrarOpcion(); 
             opc = scanner.nextInt();
 
             switch (opc) 
@@ -89,7 +89,7 @@ public class Menu {
             }
             else
             {
-                throw new IllegalArgumentException("No existe dicha figura") ;
+                throw new IllegalArgumentException("don't know this figure") ;
             }
         } 
         catch (Exception e) 
@@ -132,7 +132,7 @@ public class Menu {
 
     private void endMenu() 
     {
-        System.out.println("finalizado");
+        System.out.println("exiting");
         scanner.close(); 
     }
 }

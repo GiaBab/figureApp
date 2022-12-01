@@ -30,7 +30,7 @@ public class ArrayFigure {
     public void listar()
     {
         /*
-         * Lista todas las Figuras del array
+         * iterating all figure
          */
         int i = 0;
         for (Figura figuras:arrayFigura)
@@ -51,8 +51,7 @@ public class ArrayFigure {
     private boolean posicionNoEsVacio(int posicion) throws ArrayIndexOutOfBoundsException
     {
         /*
-         * devuelve si el elemento que esta en el int *posicion* de la lista 
-         * no sea null
+         * return if isn't null
          * parametro:
          *      + posicion - int : posicion del elemento a consultar
          * precondicion: 
@@ -65,7 +64,7 @@ public class ArrayFigure {
     private int cantidadDeFiguras()
     {   
         /*
-         * devuelve la cantidad de figuras.
+         * return amount of figure.
          */
         int cant = 0;
         for (int i=0 ; tamannoArrayEsMayorQue(i) ; i++)
@@ -82,7 +81,7 @@ public class ArrayFigure {
     private boolean hayEspacio()
     {
         /*
-         * devuelve si hay espacio para otra figura 
+         * return if have space fot other figrue. 
          */
         return (cantidadDeFiguras() < this.tamanno()) ;
     }
@@ -208,7 +207,7 @@ public class ArrayFigure {
     public void borrarFiguraPosicion(int posicion) throws ArrayIndexOutOfBoundsException
     {
         /*
-         * borra una Figura del array de la int *posicion* deseada
+         * delet figure for index
          * parametro:
          *      + posicion - int : posicion del elemento a eliminar
          * precondicion:
@@ -272,7 +271,7 @@ public class ArrayFigure {
     private int tamanno()
     {
         /*
-         * devuelve el tamanno del array 
+         * returng size of array 
          */
         return arrayFigura.length ;
     }
@@ -326,7 +325,7 @@ public class ArrayFigure {
     private boolean validarPosicion(int posicion) 
     {
         /*
-         * devuelve si se cumple la condicion en dicha posicion
+         * return if is valide.
          */
         return (!tamannoArrayEsMayorQue(posicion) || !posicionNoEsVacio(posicion) || posicion < 0 || arrayFigura == null);
     }
