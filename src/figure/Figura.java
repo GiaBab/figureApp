@@ -2,11 +2,11 @@ package figure;
 
 public abstract class Figura 
 {
-    public abstract void atributos() ;
+    public abstract void attribute() ;
     
-    public abstract double getSuperficie() ;
+    public abstract double getArea() ;
 
-    public abstract void modificar(Double...opc) ;
+    public abstract void modify(Double...opc) ;
 
-    public abstract void auxStrModificar() ;
+    public abstract void auxStrModify() ;
 }

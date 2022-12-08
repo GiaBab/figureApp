@@ -14,16 +14,16 @@ public class Rectangulo extends Figura
     }
 
     @Override
-    public void atributos()
+    public void attribute()
     {
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("la altura del rectangulo es de: " + getAltura() + ", la base de: " + getBase() + ", su superficie es de: " + getSuperficie());
+        System.out.println("la altura del rectangulo es de: " + getAltura() + ", la base de: " + getBase() + ", su superficie es de: " + getArea());
     }
 
     @Override
-    public double getSuperficie()
+    public double getArea()
     {
         /*
          * devuelve la superficie de la figura
@@ -89,7 +89,7 @@ public class Rectangulo extends Figura
     }
     
     @Override
-    public void modificar(Double...opc)
+    public void modify(Double...opc)
     { 
         /*
          * modifica los atributos mediante un menu
@@ -111,7 +111,7 @@ public class Rectangulo extends Figura
     }
 
     @Override
-    public void auxStrModificar()
+    public void auxStrModify()
     {
         new MenuString("Altura", "Base", "Salir").mostrarOpcion();
     } 

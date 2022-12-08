@@ -23,7 +23,7 @@ public class Menu {
 
         do
         {
-            new MenuString("Mostrar", "Add", "delete", "Consultar", "Superficie Max", "Superficie Min", "Modif", "exit").mostrarOpcion(); 
+            new MenuString("Mostrar", "Add", "delete", "Consultar", "area Max", "area Min", "Modif", "exit").mostrarOpcion(); 
             opc = scanner.nextInt();
 
             switch (opc) 
@@ -103,7 +103,7 @@ public class Menu {
         try {
             System.out.print("input index: ");
             int pos = scanner.nextInt() ;
-            arrayFigure.getFigura(pos).auxStrModificar();
+            arrayFigure.getFigura(pos).auxStrModify();
             int opc = scanner.nextInt() ;
             System.out.print("new size: ");
             double size = scanner.nextDouble() ;

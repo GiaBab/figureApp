@@ -9,16 +9,16 @@ public class Triangulo extends Rectangulo
     }
 
     @Override
-    public void atributos()
+    public void attribute()
     {
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("la altura del triangulo es: " + this.getAltura() + ", la base: " + this.getBase() + ", su superficie: " + this.getSuperficie());
+        System.out.println("la altura del triangulo es: " + this.getAltura() + ", la base: " + this.getBase() + ", su superficie: " + this.getArea());
     }
 
     @Override
-    public double getSuperficie()
+    public double getArea()
     {
         /*
          * devuelve la superficie de la figura

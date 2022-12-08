@@ -4,40 +4,40 @@ import menuStructure.MenuString;
 
 public class Circulo extends Figura
 {
-    double diametro ;
+    double diameter ;
     
-    public Circulo(double diametro)
+    public Circulo(double diameter)
     {
-        this.diametro = diametro ;   
+        this.diameter = diameter ;   
     }
 
     @Override
-    public void atributos()
+    public void attribute()
     {
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("el diametro del circulo es de: " + getDiametro() + ", su superficie es de: " + getSuperficie());
+        System.out.println("el diametro del circulo es de: " + getDiameter() + ", su superficie es de: " + getArea());
     }
 
     @Override
-    public double getSuperficie()
+    public double getArea()
     {   
         /*
          * devuelve la superficie de la figura
          */
-        return Math.PI * Math.pow(diametro/2,2); 
+        return Math.PI * Math.pow(diameter/2,2); 
     }
 
-    public double getDiametro()
+    public double getDiameter()
     {
         /*
          * devuelve el diametro de la figura
          */
-        return diametro ;
+        return diameter ;
     }
     
-    public void setDiametro(double tamannoDiametro)
+    public void setDiameter(double diameter)
     {
         /*
          * cambia el valor del diametro a double *tamannoDiametro*
@@ -48,9 +48,9 @@ public class Circulo extends Figura
          */
         try 
         {
-            if(0>tamannoDiametro) throw new IllegalArgumentException("Solo numeros positivos"); 
+            if(0>diameter) throw new IllegalArgumentException("Solo numeros positivos"); 
             
-            diametro = tamannoDiametro ;  
+            this.diameter = diameter ;  
         } 
         catch (Exception e) 
         {
@@ -60,7 +60,7 @@ public class Circulo extends Figura
     }
 
     @Override
-    public void modificar(Double...opc)
+    public void modify(Double...opc)
     {
         /*
          * modifica los atributos mediante un menu
@@ -70,7 +70,7 @@ public class Circulo extends Figura
         switch(opc[0].intValue())
         {
             case 1:
-                setDiametro(opc[1]);
+                setDiameter(opc[1]);
                 break ;
             default :
                 break ;
@@ -78,7 +78,7 @@ public class Circulo extends Figura
     }
 
     @Override
-    public void auxStrModificar()
+    public void auxStrModify()
     {
         new MenuString("Diametro", "Salir").mostrarOpcion();
     }
