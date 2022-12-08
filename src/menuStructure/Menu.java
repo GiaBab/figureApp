@@ -50,7 +50,7 @@ public class Menu {
     }
     
     private void listar() {
-        arrayFigure.listar();
+        arrayFigure.iterator();
     }
 
     private void superficieMaxima() {
@@ -103,7 +103,7 @@ public class Menu {
         try {
             System.out.print("input index: ");
             int pos = scanner.nextInt() ;
-            arrayFigure.getFigura(pos).auxStrModify();
+            arrayFigure.getFigure(pos).auxStrModify();
             int opc = scanner.nextInt() ;
             System.out.print("new size: ");
             double size = scanner.nextDouble() ;
