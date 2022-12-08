@@ -127,7 +127,7 @@ public class Menu {
     {
         System.out.print("input index: ");
         int posicion1 = scanner.nextInt() ;
-        arrayFigure.consultarPos(posicion1);
+        arrayFigure.consultIndex(posicion1);
     }
 
     private void endMenu() 

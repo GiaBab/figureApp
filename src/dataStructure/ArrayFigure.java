@@ -147,7 +147,7 @@ public class ArrayFigure {
          */
         try 
         {
-            if(0>diametro) throw new IllegalArgumentException("Solo numeros positivos");
+            if(0>diametro) throw new IllegalArgumentException("Only positive");
             
             Figura c = new Circulo(diametro) ;
             this.addFigure(c) ;
@@ -171,7 +171,7 @@ public class ArrayFigure {
          */
         try 
         {
-            if(0>height || 0>width) throw new IllegalArgumentException("Solo numeros positivos");
+            if(0>height || 0>width) throw new IllegalArgumentException("Only positive");
             
             Figura r = new Rectangulo(height, width) ;
             this.addFigure(r) ;
@@ -195,7 +195,7 @@ public class ArrayFigure {
          */
         try 
         {
-            if(0>height || 0>width) throw new IllegalArgumentException("Solo numeros positivos");
+            if(0>height || 0>width) throw new IllegalArgumentException("Only positive");
             
             Figura t = new Triangulo(height, width) ;
             this.addFigure(t) ;
@@ -219,7 +219,7 @@ public class ArrayFigure {
          */
         try
         {
-            if (validarPosicion(index)) throw new IllegalArgumentException("no hay elemento en esa posicion");
+            if (validateIndex(index)) throw new IllegalArgumentException("This index is null!");
     
             for (int i = 0; i < size(); i++) {
     
@@ -250,7 +250,7 @@ public class ArrayFigure {
             }
         }
 
-        System.out.println("La superficie maxima es de: " + max);
+        System.out.println("Area max is: " + max);
     }
 
     public void areaMin()
@@ -268,7 +268,7 @@ public class ArrayFigure {
             }
         }
 
-        System.out.println("La superficie minima es de: " + min);
+        System.out.println("Area min is: " + min);
     }
 
     private int size()
@@ -292,7 +292,7 @@ public class ArrayFigure {
          */
         try
         {
-            if (validarPosicion(index)) throw new IllegalArgumentException("no hay elemento en esa posicion");
+            if (validateIndex(index)) throw new IllegalArgumentException("This index is null!");
             
             getFigure(index).modify(opc*1.0, size);
         }
@@ -302,7 +302,7 @@ public class ArrayFigure {
         }
     }
 
-    public void consultarPos(int index) throws ArrayIndexOutOfBoundsException
+    public void consultIndex(int index) throws ArrayIndexOutOfBoundsException
     {
         /*
          * print attributes for index
@@ -315,7 +315,7 @@ public class ArrayFigure {
          */
         try
         {
-            if(validarPosicion(index)) throw new IllegalArgumentException("no hay elemento en esa posicion");
+            if(validateIndex(index)) throw new IllegalArgumentException("This index is null!");
         
             getFigure(index).attribute() ;
         }
@@ -325,7 +325,7 @@ public class ArrayFigure {
         }
     }
 
-    private boolean validarPosicion(int index) 
+    private boolean validateIndex(int index) 
     {
         /*
          * return if is valide.
