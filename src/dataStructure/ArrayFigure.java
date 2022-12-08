@@ -1,21 +1,21 @@
 package dataStructure;
 import java.util.Arrays;
 
-import figure.Circulo;
-import figure.Figura;
-import figure.Rectangulo;
-import figure.Triangulo;
+import figure.Circle;
+import figure.Figure;
+import figure.Rectangle;
+import figure.Triangle;
 
 public class ArrayFigure {
 
-    Figura[] arrayFigure ; 
+    Figure[] arrayFigure ; 
 
     public ArrayFigure(int size)
     {   
-        this.arrayFigure = new Figura[size] ;
+        this.arrayFigure = new Figure[size] ;
     }
 
-    public Figura getFigure(int num) throws ArrayIndexOutOfBoundsException, NullPointerException
+    public Figure getFigure(int num) throws ArrayIndexOutOfBoundsException, NullPointerException
     {
         /*
          * return figure for index
@@ -36,7 +36,7 @@ public class ArrayFigure {
          * iterating all figure
          */
         int i = 0;
-        for (Figura figuras:arrayFigure)
+        for (Figure figuras:arrayFigure)
         {
             System.out.println( "[" + i++ + "] " + figuras) ;
         }
@@ -44,7 +44,7 @@ public class ArrayFigure {
 
     private boolean sizeArrayIsMaxWith(int num) {
         /*
-         * devuelve si el tamano del array es mayot que Int *numero*
+         * return if array is max that num
          * parametro:
          *      + numero - int : numero a comparar
          */
@@ -89,17 +89,16 @@ public class ArrayFigure {
         return (amoutFigure() < this.size()) ;
     }
 
-    public void addFigure(Figura figure)
+    public void addFigure(Figure figure)
     {   
         /*
-         * añade nueva figura *Figura* al array, caso que no hay espacio este 
-         * se rendimenciona para agregar a la nueva figura *figura*
+         * add new figure, if need amout array size
          * parametro:
          *      +figura - Figura : agrega nueva figura
          */
         int pos = 0;
         int aux = !haveSpace()?1:0 ;
-        Figura auxArray[] = Arrays.copyOf(arrayFigure, this.size()+aux) ;
+        Figure auxArray[] = Arrays.copyOf(arrayFigure, this.size()+aux) ;
 
         while(sizeArrayIsMaxWith(pos) && this.indexNotNull(pos))
             pos++ ;
@@ -149,7 +148,7 @@ public class ArrayFigure {
         {
             if(0>diametro) throw new IllegalArgumentException("Only positive");
             
-            Figura c = new Circulo(diametro) ;
+            Figure c = new Circle(diametro) ;
             this.addFigure(c) ;
         } 
         catch (Exception e) 
@@ -173,7 +172,7 @@ public class ArrayFigure {
         {
             if(0>height || 0>width) throw new IllegalArgumentException("Only positive");
             
-            Figura r = new Rectangulo(height, width) ;
+            Figure r = new Rectangle(height, width) ;
             this.addFigure(r) ;
         } 
         catch (Exception e) 
@@ -197,7 +196,7 @@ public class ArrayFigure {
         {
             if(0>height || 0>width) throw new IllegalArgumentException("Only positive");
             
-            Figura t = new Triangulo(height, width) ;
+            Figure t = new Triangle(height, width) ;
             this.addFigure(t) ;
         } 
         catch (Exception e) 

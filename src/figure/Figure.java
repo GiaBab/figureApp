@@ -1,6 +1,6 @@
 package figure;
 
-public abstract class Figura 
+public abstract class Figure 
 {
     public abstract void attribute() ;
     
@@ -8,5 +8,5 @@ public abstract class Figura
 
     public abstract void modify(Double...opc) ;
 
-    public abstract void auxStrModify() ;
+    public abstract void printOpcionModify() ;
 }

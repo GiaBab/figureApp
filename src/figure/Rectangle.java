@@ -2,12 +2,12 @@ package figure;
 
 import menuStructure.MenuString;
 
-public class Rectangulo extends Figura
+public class Rectangle extends Figure
 {
     double height ;
     double width ;
 
-    public Rectangulo(double height, double width) 
+    public Rectangle(double height, double width) 
     {
         this.height = height ;
         this.width = width ;
@@ -17,16 +17,16 @@ public class Rectangulo extends Figura
     public void attribute()
     {
         /*
-         * imprime los atributos de la Figura
+         * print attribute
          */
-        System.out.println("la altura del rectangulo es de: " + getHeight() + ", la base de: " + getWidth() + ", su superficie es de: " + getArea());
+        System.out.println("Height: " + this.getHeight() + ", Width: " + this.getWidth() + ", Area: " + this.getArea());
     }
 
     @Override
     public double getArea()
     {
         /*
-         * devuelve la superficie de la figura
+         * return area
          */
         return height * width ;
     }
@@ -34,7 +34,7 @@ public class Rectangulo extends Figura
     public double getHeight()
     {
         /*
-         * devuelve la altura de la figura
+         * return height
          */
         return height ;
     }
@@ -42,7 +42,7 @@ public class Rectangulo extends Figura
     public double getWidth()
     {
         /*
-         * devuelve la base de la figura
+         * return width
          */
         return width ;
     }
@@ -111,7 +111,7 @@ public class Rectangulo extends Figura
     }
 
     @Override
-    public void auxStrModify()
+    public void printOpcionModify()
     {
         new MenuString("Altura", "Base", "Salir").mostrarOpcion();
     } 

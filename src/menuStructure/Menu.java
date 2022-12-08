@@ -103,7 +103,7 @@ public class Menu {
         try {
             System.out.print("input index: ");
             int pos = scanner.nextInt() ;
-            arrayFigure.getFigure(pos).auxStrModify();
+            arrayFigure.getFigure(pos).printOpcionModify();
             int opc = scanner.nextInt() ;
             System.out.print("new size: ");
             double size = scanner.nextDouble() ;

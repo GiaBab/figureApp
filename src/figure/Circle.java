@@ -2,11 +2,11 @@ package figure;
 
 import menuStructure.MenuString;
 
-public class Circulo extends Figura
+public class Circle extends Figure
 {
     double diameter ;
     
-    public Circulo(double diameter)
+    public Circle(double diameter)
     {
         this.diameter = diameter ;   
     }
@@ -78,7 +78,7 @@ public class Circulo extends Figura
     }
 
     @Override
-    public void auxStrModify()
+    public void printOpcionModify()
     {
         new MenuString("Diametro", "Salir").mostrarOpcion();
     }
