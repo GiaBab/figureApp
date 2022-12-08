@@ -4,13 +4,13 @@ import menuStructure.MenuString;
 
 public class Rectangulo extends Figura
 {
-    double altura ;
-    double base ;
+    double height ;
+    double width ;
 
-    public Rectangulo(double altura, double base) 
+    public Rectangulo(double height, double width) 
     {
-        this.altura = altura ;
-        this.base = base ;
+        this.height = height ;
+        this.width = width ;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Rectangulo extends Figura
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("la altura del rectangulo es de: " + getAltura() + ", la base de: " + getBase() + ", su superficie es de: " + getArea());
+        System.out.println("la altura del rectangulo es de: " + getHeight() + ", la base de: " + getWidth() + ", su superficie es de: " + getArea());
     }
 
     @Override
@@ -28,26 +28,26 @@ public class Rectangulo extends Figura
         /*
          * devuelve la superficie de la figura
          */
-        return altura * base ;
+        return height * width ;
     }
 
-    public double getAltura()
+    public double getHeight()
     {
         /*
          * devuelve la altura de la figura
          */
-        return altura ;
+        return height ;
     }
 
-    public double getBase()
+    public double getWidth()
     {
         /*
          * devuelve la base de la figura
          */
-        return base ;
+        return width ;
     }
 
-    public void setAltura(double tamannoAltura)
+    public void setHeight(double height)
     {
         /*
          * cambia el valor del altura a double *tamannoAltura*
@@ -58,8 +58,8 @@ public class Rectangulo extends Figura
          */
         try 
         {
-            if(0>tamannoAltura) throw new IllegalArgumentException("Solo numeros positivos");
-            altura = tamannoAltura ;  
+            if(0>height) throw new IllegalArgumentException("Solo numeros positivos");
+            this.height = height ;  
         } 
         catch (Exception e) 
         {
@@ -67,7 +67,7 @@ public class Rectangulo extends Figura
         }
     }
 
-    public void setBase(double tamannoBase)
+    public void setWidth(double width)
     {
         /*
          * cambia el valor del base a double *tamannoBase*
@@ -78,9 +78,9 @@ public class Rectangulo extends Figura
          */
         try 
         {
-            if(0>tamannoBase) throw new IllegalArgumentException("Solo numeros positivos");
+            if(0>width) throw new IllegalArgumentException("Solo numeros positivos");
             
-            base = tamannoBase ;  
+            this.width = width ;  
         } 
         catch (Exception e) 
         {
@@ -100,10 +100,10 @@ public class Rectangulo extends Figura
         switch(opc[0].intValue())
         {
             case 1:
-                setAltura(opc[1]);
+                setHeight(opc[1]);
                 break ;
             case 2:
-                setBase(opc[1]);
+                setWidth(opc[1]);
                 break ;
             default :
                 break ;

@@ -39,7 +39,7 @@ public class ArchiveSystem
                 char inicial = data.charAt(0);
                 double altura = Double.parseDouble(dataSplit[1]) ;
                 double base = inicial != 'C'?Double.parseDouble(dataSplit[2]):0;
-                arrFiguraAux.agregarYCrearFigura(inicial, altura, base); 
+                arrFiguraAux.addFigure(inicial, altura, base); 
             }
             myReader.close();
             arrFigura = arrFiguraAux ;

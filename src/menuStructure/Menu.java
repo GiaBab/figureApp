@@ -54,11 +54,11 @@ public class Menu {
     }
 
     private void superficieMaxima() {
-        arrayFigure.superficieMaxima();
+        arrayFigure.areaMax();
     }
 
     private void superficieMinima() {
-        arrayFigure.superficieMinima();
+        arrayFigure.areaMin();
     }
 
     private void agregarYCrearElemento() 
@@ -77,7 +77,7 @@ public class Menu {
             {
                 System.out.print("input diametro: ");
                 Double num = scanner.nextDouble() ; 
-                arrayFigure.agregarYCrearFigura(inicial, num) ;
+                arrayFigure.addFigure(inicial, num) ;
             }
             else if(inicial == 'T' || inicial == 'R')
             {
@@ -85,7 +85,7 @@ public class Menu {
                 Double num = scanner.nextDouble() ; 
                 System.out.print("input base: ");
                 Double num1 = scanner.nextDouble() ;
-                arrayFigure.agregarYCrearFigura(inicial, num, num1) ;
+                arrayFigure.addFigure(inicial, num, num1) ;
             }
             else
             {
@@ -107,7 +107,7 @@ public class Menu {
             int opc = scanner.nextInt() ;
             System.out.print("new size: ");
             double size = scanner.nextDouble() ;
-            arrayFigure.modificar(pos, opc, size); 
+            arrayFigure.modify(pos, opc, size); 
         } 
         catch (Exception e) 
         {
@@ -120,7 +120,7 @@ public class Menu {
     {
         System.out.print("input index: ");
         int posicion = scanner.nextInt() ;
-        arrayFigure.borrarFiguraPosicion(posicion);
+        arrayFigure.deletFigure(posicion);
     }
 
     private void consultPos()

@@ -8,18 +8,18 @@ import figure.Triangulo;
 
 public class ArrayFigure {
 
-    Figura[] arrayFigura ; 
+    Figura[] arrayFigure ; 
 
     public ArrayFigure(int size)
     {   
-        this.arrayFigura = new Figura[size] ;
+        this.arrayFigure = new Figura[size] ;
     }
 
     public Figura getFigura(int num) throws ArrayIndexOutOfBoundsException, NullPointerException
     {
         try 
         {
-            return arrayFigura[num] ;   
+            return arrayFigure[num] ;   
         } 
         catch (Exception e) 
         {
@@ -33,7 +33,7 @@ public class ArrayFigure {
          * iterating all figure
          */
         int i = 0;
-        for (Figura figuras:arrayFigura)
+        for (Figura figuras:arrayFigure)
         {
             System.out.println( "[" + i++ + "] " + figuras) ;
         }
@@ -45,7 +45,7 @@ public class ArrayFigure {
          * parametro:
          *      + numero - int : numero a comparar
          */
-        return num < tamanno();
+        return num < size();
     }
 
     private boolean posicionNoEsVacio(int index) throws ArrayIndexOutOfBoundsException
@@ -78,15 +78,15 @@ public class ArrayFigure {
         return cant ;
     }
 
-    private boolean hayEspacio()
+    private boolean haveSpace()
     {
         /*
          * return if have space fot other figrue. 
          */
-        return (cantidadDeFiguras() < this.tamanno()) ;
+        return (cantidadDeFiguras() < this.size()) ;
     }
 
-    public void agregarFigura(Figura figura)
+    public void addFigure(Figura figure)
     {   
         /*
          * añade nueva figura *Figura* al array, caso que no hay espacio este 
@@ -95,18 +95,18 @@ public class ArrayFigure {
          *      +figura - Figura : agrega nueva figura
          */
         int pos = 0;
-        int aux = !hayEspacio()?1:0 ;
-        Figura auxArray[] = Arrays.copyOf(arrayFigura, this.tamanno()+aux) ;
+        int aux = !haveSpace()?1:0 ;
+        Figura auxArray[] = Arrays.copyOf(arrayFigure, this.size()+aux) ;
 
         while(tamannoArrayEsMayorQue(pos) && this.posicionNoEsVacio(pos))
             pos++ ;
 
-        auxArray[pos] = figura ;
-        arrayFigura = Arrays.copyOf(auxArray, auxArray.length) ;
+        auxArray[pos] = figure ;
+        arrayFigure = Arrays.copyOf(auxArray, auxArray.length) ;
         
     }
 
-    public void agregarYCrearFigura(char inicialFigura, Double num1, Double... num2)
+    public void addFigure(char inicialFigura, Double num1, Double... num2)
     {
         /*
          * agregra y crea una nueva instancia de figura en base de char *inicialFigura* con sus atributos double *num1* 
@@ -147,7 +147,7 @@ public class ArrayFigure {
             if(0>diametro) throw new IllegalArgumentException("Solo numeros positivos");
             
             Figura c = new Circulo(diametro) ;
-            this.agregarFigura(c) ;
+            this.addFigure(c) ;
         } 
         catch (Exception e) 
         {
@@ -171,7 +171,7 @@ public class ArrayFigure {
             if(0>height || 0>width) throw new IllegalArgumentException("Solo numeros positivos");
             
             Figura r = new Rectangulo(height, width) ;
-            this.agregarFigura(r) ;
+            this.addFigure(r) ;
         } 
         catch (Exception e) 
         {
@@ -195,7 +195,7 @@ public class ArrayFigure {
             if(0>height || 0>width) throw new IllegalArgumentException("Solo numeros positivos");
             
             Figura t = new Triangulo(height, width) ;
-            this.agregarFigura(t) ;
+            this.addFigure(t) ;
         } 
         catch (Exception e) 
         {
@@ -204,7 +204,7 @@ public class ArrayFigure {
         
     }
     
-    public void borrarFiguraPosicion(int index) throws ArrayIndexOutOfBoundsException
+    public void deletFigure(int index) throws ArrayIndexOutOfBoundsException
     {
         /*
          * delet figure for index
@@ -218,11 +218,11 @@ public class ArrayFigure {
         {
             if (validarPosicion(index)) throw new IllegalArgumentException("no hay elemento en esa posicion");
     
-            for (int i = 0; i < tamanno(); i++) {
+            for (int i = 0; i < size(); i++) {
     
                 if (i == index) 
                 {
-                    arrayFigura[i] = null;
+                    arrayFigure[i] = null;
                 }
             }
         }
@@ -232,10 +232,10 @@ public class ArrayFigure {
         }
     }   
 
-    public void superficieMaxima() 
+    public void areaMax() 
     {   
         /*
-         * imprime la superficie de mayor tamanno
+         * print max area size
          */
         double max = getFigura(0).getArea() ;
 
@@ -250,10 +250,10 @@ public class ArrayFigure {
         System.out.println("La superficie maxima es de: " + max);
     }
 
-    public void superficieMinima()
+    public void areaMin()
     {
         /*
-         * imprime la superficie de menor tamanno
+         * print min area size
          */
         double min = getFigura(0).getArea() ;
 
@@ -268,15 +268,15 @@ public class ArrayFigure {
         System.out.println("La superficie minima es de: " + min);
     }
 
-    private int tamanno()
+    private int size()
     {
         /*
          * returng size of array 
          */
-        return arrayFigura.length ;
+        return arrayFigure.length ;
     }
 
-    public void modificar(int index, int opc, double size) throws ArrayIndexOutOfBoundsException
+    public void modify(int index, int opc, double size) throws ArrayIndexOutOfBoundsException
     {
         /*
          * modifica los atributos de la figura en la posicion Int *posicion* mediante un menu
@@ -327,7 +327,7 @@ public class ArrayFigure {
         /*
          * return if is valide.
          */
-        return (!tamannoArrayEsMayorQue(index) || !posicionNoEsVacio(index) || index < 0 || arrayFigura == null);
+        return (!tamannoArrayEsMayorQue(index) || !posicionNoEsVacio(index) || index < 0 || arrayFigure == null);
     }
     
 }
