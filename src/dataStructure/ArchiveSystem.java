@@ -17,7 +17,7 @@ public class ArchiveSystem
     public ArrayFigure openArchive()
     {
         /*
-         * devuelve un arrayDeFiguras con las figuras impresa en el archivo.txt
+         * return arrayFigure input for archivo.txt
          * precondicion:
          *      + para imprimir triangulo debe estar el Char T con sus dos numeros correspondiente separado entre espacio
          *      + para imprimir rectangulo debe estar el Char R con sus dos numeros correspondiente separado entre espacio
@@ -30,28 +30,28 @@ public class ArchiveSystem
             FileReader myObj = new FileReader("./archivo.txt") ;
             BufferedReader myReader = new BufferedReader(myObj) ;
             String data = myReader.readLine();
-            ArrayFigure arrFiguraAux = new ArrayFigure(Integer.parseInt(data)) ;
+            ArrayFigure arrFigureAux = new ArrayFigure(Integer.parseInt(data)) ;
             int i= 0 ;
             while ((data = myReader.readLine()) != null) 
             {
-                System.out.println("["+ (i++) +"] " + "imprimiendo: " + data) ;
+                System.out.println("["+ (i++) +"] " + "Input: " + data) ;
                 String[] dataSplit = data.split(" ") ;
                 char inicial = data.charAt(0);
-                double altura = Double.parseDouble(dataSplit[1]) ;
-                double base = inicial != 'C'?Double.parseDouble(dataSplit[2]):0;
-                arrFiguraAux.addFigure(inicial, altura, base); 
+                double hieght = Double.parseDouble(dataSplit[1]) ;
+                double width = inicial != 'C'?Double.parseDouble(dataSplit[2]):0;
+                arrFigureAux.addFigure(inicial, hieght, width); 
             }
             myReader.close();
-            arrFigura = arrFiguraAux ;
+            arrFigura = arrFigureAux ;
         } 
         catch (FileNotFoundException e) 
         {
-            System.out.println("Ocurrio un error.");
+            System.out.println("Error.");
             e.printStackTrace();
         }
         catch(IOException e)
         {
-            System.out.println("Ocurrio un error.");
+            System.out.println("Error.");
             e.printStackTrace();
         }
         return arrFigura ;

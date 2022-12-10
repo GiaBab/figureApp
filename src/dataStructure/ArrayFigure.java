@@ -218,7 +218,7 @@ public class ArrayFigure {
          */
         try
         {
-            if (validateIndex(index)) throw new IllegalArgumentException("This index is null!");
+            if (validateIndex(index)) throw new IllegalArgumentException("This index is invalid!");
     
             for (int i = 0; i < size(); i++) {
     
@@ -291,7 +291,7 @@ public class ArrayFigure {
          */
         try
         {
-            if (validateIndex(index)) throw new IllegalArgumentException("This index is null!");
+            if (validateIndex(index)) throw new IllegalArgumentException("This index is invalid!");
             
             getFigure(index).modify(opc*1.0, size);
         }
@@ -314,7 +314,7 @@ public class ArrayFigure {
          */
         try
         {
-            if(validateIndex(index)) throw new IllegalArgumentException("This index is null!");
+            if(validateIndex(index)) throw new IllegalArgumentException("This index is invalid!");
         
             getFigure(index).attribute() ;
         }

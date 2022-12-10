@@ -58,7 +58,7 @@ public class Rectangle extends Figure
          */
         try 
         {
-            if(0>height) throw new IllegalArgumentException("Solo numeros positivos");
+            if(0>height) throw new IllegalArgumentException("Only positive");
             this.height = height ;  
         } 
         catch (Exception e) 
@@ -78,8 +78,7 @@ public class Rectangle extends Figure
          */
         try 
         {
-            if(0>width) throw new IllegalArgumentException("Solo numeros positivos");
-            
+            if(0>width) throw new IllegalArgumentException("Only positive");
             this.width = width ;  
         } 
         catch (Exception e) 
@@ -113,6 +112,6 @@ public class Rectangle extends Figure
     @Override
     public void printOpcionModify()
     {
-        new MenuString("Altura", "Base", "Salir").mostrarOpcion();
+        new MenuString("Height", "Width", "Exit").mostrarOpcion();
     } 
 }

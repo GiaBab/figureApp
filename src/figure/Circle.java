@@ -17,7 +17,7 @@ public class Circle extends Figure
         /*
          * imprime los atributos de la Figura
          */
-        System.out.println("el diametro del circulo es de: " + getDiameter() + ", su superficie es de: " + getArea());
+        System.out.println("Diameter: " + getDiameter() + ", Area: " + getArea());
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Circle extends Figure
          */
         try 
         {
-            if(0>diameter) throw new IllegalArgumentException("Solo numeros positivos"); 
+            if(0>diameter) throw new IllegalArgumentException("Only positive"); 
             
             this.diameter = diameter ;  
         } 
@@ -80,6 +80,6 @@ public class Circle extends Figure
     @Override
     public void printOpcionModify()
     {
-        new MenuString("Diametro", "Salir").mostrarOpcion();
+        new MenuString("Diameter", "Exit").mostrarOpcion();
     }
 }

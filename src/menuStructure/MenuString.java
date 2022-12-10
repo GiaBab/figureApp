@@ -2,7 +2,7 @@ package menuStructure;
 
 public class MenuString 
 {
-    final String[] opcionsList ;
+    private final String[] opcionsList ;
 
     public MenuString(String...opcionsList)
     {
@@ -16,5 +16,6 @@ public class MenuString
         {
             System.out.println("["+(i+1)+"] " + opcionsList[i]);
         }
+        System.out.print("[User] opcion: ");
     }
 }

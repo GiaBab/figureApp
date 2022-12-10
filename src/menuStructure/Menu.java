@@ -19,14 +19,14 @@ public class Menu {
 
     public void inicialMenu()
     {
-        int opc ;
+        int opcInput ;
 
         do
         {
-            new MenuString("Mostrar", "Add", "delete", "Consultar", "area Max", "area Min", "Modif", "exit").mostrarOpcion(); 
-            opc = scanner.nextInt();
+            new MenuString("Show", "Add", "delete", "Consult", "area Max", "area Min", "Modif", "exit").mostrarOpcion(); 
+            opcInput = scanner.nextInt();
 
-            switch (opc) 
+            switch (opcInput) 
             {
                 case 1 ->
                     listar();
@@ -46,7 +46,7 @@ public class Menu {
                     endMenu();
             }
         }
-        while(opc != 8) ;
+        while(opcInput != 8) ;
     }
     
     private void listar() {
@@ -70,27 +70,13 @@ public class Menu {
          *      + los double input no puede ser negativo 
          */
         try {
-            System.out.println("ingresar la inicial de la figura a crear");
-            System.out.println("las opciones disponible son C (circulo), T (triangulo) y R (rectangulo)");
-            char inicial = Character.toUpperCase(scanner.next().charAt(0));
-            if(inicial == 'C')
-            {
-                System.out.print("input diametro: ");
-                Double num = scanner.nextDouble() ; 
-                arrayFigure.addFigure(inicial, num) ;
-            }
-            else if(inicial == 'T' || inicial == 'R')
-            {
-                System.out.print("input altura: ");
-                Double num = scanner.nextDouble() ; 
-                System.out.print("input base: ");
-                Double num1 = scanner.nextDouble() ;
-                arrayFigure.addFigure(inicial, num, num1) ;
-            }
-            else
-            {
-                throw new IllegalArgumentException("don't know this figure") ;
-            }
+            new MenuString("Circle", "Triangle", "Rectangle").mostrarOpcion();
+            switch (scanner.nextInt()) {
+                case 1 -> addCircle() ;
+                case 2 -> addTriangle() ;
+                case 3 -> addRectangle() ;
+                default -> throw new IllegalArgumentException("don't know this figure") ;
+            } ;
         } 
         catch (Exception e) 
         {
@@ -98,34 +84,56 @@ public class Menu {
         }
     }
 
+    private void addTriangle() {
+        System.out.print("[User] input Height: ");
+        Double num = scanner.nextDouble() ; 
+        System.out.print("[User] input Width: ");
+        Double num1 = scanner.nextDouble() ;
+        arrayFigure.addFigure('T', num, num1) ;
+    }
+
+    private void addRectangle() {
+        System.out.print("[User] input Height: ");
+        Double num = scanner.nextDouble() ; 
+        System.out.print("[User] input Width: ");
+        Double num1 = scanner.nextDouble() ;
+        arrayFigure.addFigure('R', num, num1) ;
+    }
+
+    private void addCircle() {
+        System.out.print("[User] input Diameter: ");
+        Double num = scanner.nextDouble() ; 
+        arrayFigure.addFigure('C', num) ;
+    }
+
     private void modificar()
     {
         try {
-            System.out.print("input index: ");
+            System.out.print("[User] input index: ");
             int pos = scanner.nextInt() ;
             arrayFigure.getFigure(pos).printOpcionModify();
             int opc = scanner.nextInt() ;
-            System.out.print("new size: ");
+            System.out.print("[User] new size: ");
             double size = scanner.nextDouble() ;
             arrayFigure.modify(pos, opc, size); 
         } 
         catch (Exception e) 
         {
             System.out.println(e.getMessage()) ;
-            System.out.println("input invalide");
+            System.out.println("[User] input invalide");
         }
     }
 
     private void deletPos()
     {
-        System.out.print("input index: ");
+        System.out.print("[User] input index: ");
         int posicion = scanner.nextInt() ;
         arrayFigure.deletFigure(posicion);
     }
 
     private void consultPos()
     {
-        System.out.print("input index: ");
+        System.out.print("[User] input index: ");
         int posicion1 = scanner.nextInt() ;
         arrayFigure.consultIndex(posicion1);
     }
