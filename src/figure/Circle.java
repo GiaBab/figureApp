@@ -80,6 +80,6 @@ public class Circle extends Figure
     @Override
     public void printOpcionModify()
     {
-        new MenuString("Diameter", "Exit").mostrarOpcion();
+        new MenuString("Diameter", "Exit").showOpcions();
     }
 }

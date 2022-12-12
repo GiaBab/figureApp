@@ -23,7 +23,7 @@ public class Menu {
 
         do
         {
-            new MenuString("Show", "Add", "delete", "Consult", "area Max", "area Min", "Modif", "exit").mostrarOpcion(); 
+            new MenuString("Show", "Add", "delete", "Consult", "area Max", "area Min", "Modif", "exit").showOpcions(); 
             opcInput = scanner.nextInt();
 
             switch (opcInput) 
@@ -70,7 +70,7 @@ public class Menu {
          *      + los double input no puede ser negativo 
          */
         try {
-            new MenuString("Circle", "Triangle", "Rectangle").mostrarOpcion();
+            new MenuString("Circle", "Triangle", "Rectangle").showOpcions();
             switch (scanner.nextInt()) {
                 case 1 -> addCircle() ;
                 case 2 -> addTriangle() ;
@@ -86,24 +86,24 @@ public class Menu {
 
     private void addTriangle() {
         System.out.print("[User] input Height: ");
-        Double num = scanner.nextDouble() ; 
+        Double height = scanner.nextDouble() ; 
         System.out.print("[User] input Width: ");
-        Double num1 = scanner.nextDouble() ;
-        arrayFigure.addFigure('T', num, num1) ;
+        Double width = scanner.nextDouble() ;
+        arrayFigure.addFigure('T', height, width) ;
     }
 
     private void addRectangle() {
         System.out.print("[User] input Height: ");
-        Double num = scanner.nextDouble() ; 
+        Double height = scanner.nextDouble() ; 
         System.out.print("[User] input Width: ");
-        Double num1 = scanner.nextDouble() ;
-        arrayFigure.addFigure('R', num, num1) ;
+        Double width = scanner.nextDouble() ;
+        arrayFigure.addFigure('R', height, width) ;
     }
 
     private void addCircle() {
         System.out.print("[User] input Diameter: ");
-        Double num = scanner.nextDouble() ; 
-        arrayFigure.addFigure('C', num) ;
+        Double diameter = scanner.nextDouble() ; 
+        arrayFigure.addFigure('C', diameter) ;
     }
 
     private void modificar()

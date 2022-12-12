@@ -112,6 +112,6 @@ public class Rectangle extends Figure
     @Override
     public void printOpcionModify()
     {
-        new MenuString("Height", "Width", "Exit").mostrarOpcion();
+        new MenuString("Height", "Width", "Exit").showOpcions();
     } 
 }

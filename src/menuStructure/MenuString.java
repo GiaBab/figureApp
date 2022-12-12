@@ -9,7 +9,7 @@ public class MenuString
         this.opcionsList = opcionsList ;
     }
 
-    public void mostrarOpcion()
+    public void showOpcions()
     {
         System.out.println("---------------------------------");
         for(int i=0 ; opcionsList.length > i ; i++)

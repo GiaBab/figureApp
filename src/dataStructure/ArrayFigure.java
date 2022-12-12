@@ -93,11 +93,11 @@ public class ArrayFigure {
     {   
         /*
          * add new figure, if need amout array size
-         * parametro:
-         *      +figura - Figura : agrega nueva figura
+         * par:
+         *      +figura - Figura : add new figure
          */
         int pos = 0;
-        int aux = !haveSpace()?1:0 ;
+        int aux = haveSpace()?0:1 ;
         Figure auxArray[] = Arrays.copyOf(arrayFigure, this.size()+aux) ;
 
         while(sizeArrayIsMaxWith(pos) && this.indexNotNull(pos))
